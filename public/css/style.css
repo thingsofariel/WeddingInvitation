@@ -1,0 +1,627 @@
+/* ===================== RESET & BASE ===================== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --color-cream: #faf6f0;
+  --color-cream-dark: #f1e9dc;
+  --color-text: #3c352e;
+  --color-text-soft: #6b6055;
+  --color-accent: #a98358;
+  --color-accent-light: #d8c4a4;
+  --color-white: #ffffff;
+  --font-script: "Great Vibes", cursive;
+  --font-serif: "Cormorant Garamond", serif;
+  --font-sans: "Poppins", sans-serif;
+  --max-width: 480px;
+}
+
+html, body {
+  font-family: var(--font-sans);
+  color: var(--color-text);
+  background: var(--color-cream);
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.script {
+  font-family: var(--font-script);
+}
+
+#invitation {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  /* Updated to use your requested photo as the full cover background */
+  background: linear-gradient(rgba(250, 246, 240, 0.5), rgba(250, 246, 240, 0.5)), url('../images/untitled.jpg') no-repeat center center;
+  background-size: cover;
+  background-attachment: scroll;
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.08);
+}
+
+.screen {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 60px 28px;
+  position: relative;
+}
+
+/* ===================== COVER ===================== */
+#cover {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  /* Keep the background completely raw and clear */
+  background: url('../images/Cover.jpg') no-repeat center center;
+  background-size: cover;
+}
+
+.cover-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  
+  /* --- ADDED OVERLAY STYLES FOR THE TEXT CARD --- */
+  background: rgba(250, 246, 240, 0.85); /* Warm cream backdrop card */
+  padding: 30px 24px;
+  border-radius: 16px;
+  max-width: 90%;                        /* Keeps it nicely centered away from screen edges */
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+.eyebrow {
+  letter-spacing: 3px;
+  font-size: 0.75rem;
+  color: var(--color-text-soft);
+  font-weight: 500;
+}
+
+.couple-names {
+  font-size: 3.2rem;
+  color: var(--color-accent);
+  line-height: 1.1;
+}
+
+.cover-divider {
+  width: 60px;
+  height: 2px;
+  background: var(--color-accent-light);
+  margin: 10px 0;
+}
+
+.cover-line {
+  font-family: var(--font-serif);
+  font-size: 1.05rem;
+  color: var(--color-text-soft);
+}
+
+.guest-name {
+  font-family: var(--font-serif);
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: var(--color-text);
+  margin: 4px 0;
+}
+
+.btn-open {
+  margin-top: 26px;
+  padding: 14px 38px;
+  background: var(--color-accent);
+  color: var(--color-white);
+  border-radius: 30px;
+  font-size: 0.85rem;
+  letter-spacing: 1px;
+  transition: background 0.25s ease, transform 0.2s ease;
+}
+
+.btn-open:hover {
+  background: #8c6a44;
+  transform: translateY(-2px);
+}
+
+/* ===================== SECTION HEADINGS ===================== */
+.section-kicker {
+  font-size: 2.2rem;
+  color: var(--color-accent);
+  margin-bottom: -8px;
+}
+
+.section-title {
+  font-family: var(--font-serif);
+  font-size: 1.1rem;
+  letter-spacing: 4px;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-bottom: 18px;
+}
+
+.section-intro {
+  font-family: var(--font-serif);
+  font-size: 1rem;
+  color: var(--color-text-soft);
+  max-width: 360px;
+  margin-bottom: 30px;
+}
+
+/* ===================== HERO ===================== */
+#hero {
+  /* Links your background picture with a light tint overlay to preserve text readability */
+  background: linear-gradient(rgba(250, 246, 240, 0.50), rgba(250, 246, 240, 0.50)), url('../images/Cover2.jpg') no-repeat center center;
+  background-size: cover;
+}
+
+.hero-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 22px;
+}
+
+.verse {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 1rem;
+  color: var(--color-text-soft);
+  max-width: 360px;
+  line-height: 1.6;
+}
+
+.countdown {
+  display: flex;
+  gap: 18px;
+  margin-top: 10px;
+}
+
+.countdown-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: var(--color-white);
+  border: 1px solid var(--color-accent-light);
+  border-radius: 12px;
+  padding: 14px 10px;
+  min-width: 60px;
+}
+
+.countdown-number {
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: var(--color-accent);
+}
+
+.countdown-label {
+  font-size: 0.65rem;
+  letter-spacing: 1px;
+  color: var(--color-text-soft);
+  margin-top: 4px;
+}
+
+/* ===================== COUPLE ===================== */
+#couple {
+  /* Forces the layout container to display your background portrait over the global base styles */
+  background: linear-gradient(rgba(250, 246, 240, 0.75), rgba(250, 246, 240, 0.75)), url('../images/Cover3.jpg') no-repeat center center !important;
+  background-size: cover !important;
+}
+
+.couple-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+  width: 100%;
+  margin-bottom: 36px;
+}
+
+/* Base style for centering all element items neatly */
+.couple-member {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+}
+
+.couple-card-title {
+  font-size: 2.4rem;
+  color: var(--color-accent);
+}
+
+.couple-fullname {
+  font-family: var(--font-serif);
+  font-size: 1.15rem;
+  font-weight: 600;
+  margin: 6px 0 8px;
+}
+
+.couple-parents {
+  font-family: var(--font-serif);
+  color: var(--color-text-soft);
+  font-size: 0.92rem;
+  max-width: 320px;
+  margin: 0 auto;
+}
+
+/* --- NEW PHOTO CONTAINERS (PLACED ON THE BOTTOM) --- */
+.couple-avatar-wrapper {
+  width: 100%;
+  max-width: 320px;       /* Sets the portrait sizing width aspect */
+  height: auto;
+  aspect-ratio: 4 / 3;    /* Holds the wide landscape perspective layout */
+  overflow: hidden;
+  margin-top: 20px;       /* Creates separation space directly below the text blocks */
+  margin-bottom: 10px;
+  border: 4px solid var(--color-white);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.couple-avatar {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;      /* Guarantees the picture scales beautifully without shifting */
+}
+
+.ig-link {
+  display: inline-block;
+  margin-top: 10px;
+  font-size: 0.75rem;
+  letter-spacing: 1px;
+  color: var(--color-accent);
+  text-decoration: none;
+  border-bottom: 1px solid var(--color-accent);
+}
+
+.couple-photos {
+  display: flex;
+  gap: 8px;
+  width: 100%;
+}
+
+.couple-photos img {
+  flex: 1;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+/* ===================== EVENT ===================== */
+.event-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 100%;
+  margin-bottom: 26px;
+}
+
+/* --- ADDED THIS NEW BLOCK HERE --- */
+.event-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centers the button neatly below the card */
+  gap: 16px;           /* Spaces out the card and the button */
+  width: 100%;
+}
+
+.event-card {
+  background: var(--color-white);
+  border-radius: 14px;
+  padding: 26px 20px;
+  border: 1px solid var(--color-accent-light);
+  width: 100%;         /* Forces the card to span the full width */
+}
+.event-card-title {
+  font-family: var(--font-serif);
+  letter-spacing: 2px;
+  font-size: 0.95rem;
+  color: var(--color-accent);
+  margin-bottom: 10px;
+}
+
+.event-card p {
+  font-family: var(--font-serif);
+  font-size: 0.95rem;
+  color: var(--color-text-soft);
+  margin: 3px 0;
+}
+
+.btn-outline {
+  display: inline-block;
+  padding: 12px 30px;
+  border: 1px solid var(--color-accent);
+  color: var(--color-accent);
+  border-radius: 30px;
+  font-size: 0.78rem;
+  letter-spacing: 1px;
+  text-decoration: none;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.btn-outline:hover {
+  background: var(--color-accent);
+  color: var(--color-white);
+}
+
+.btn-small {
+  padding: 8px 22px;
+  font-size: 0.72rem;
+}
+
+/* ===================== GALLERY ===================== */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 6px;
+  width: 100%;
+}
+
+.gallery-grid img {
+  width: 100%;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+
+.gallery-grid img:hover {
+  opacity: 0.85;
+}
+
+.lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.92);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+
+.lightbox img {
+  max-width: 90%;
+  max-height: 85vh;
+  border-radius: 6px;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 20px;
+  right: 24px;
+  font-size: 2rem;
+  color: var(--color-white);
+}
+
+.lightbox-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 2.4rem;
+  color: var(--color-white);
+  padding: 10px 16px;
+}
+
+.lightbox-prev {
+  left: 6px;
+}
+
+.lightbox-next {
+  right: 6px;
+}
+
+/* ===================== GIFT ===================== */
+.gift-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /* Spaces out the two bank boxes cleanly */
+  width: 100%;
+}
+
+.gift-card {
+  background: var(--color-white);
+  border: 1px solid var(--color-accent-light);
+  border-radius: 14px;
+  padding: 30px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  width: 100%; /* Ensures both cards match the standard layout width */
+}
+
+.gift-bank {
+  letter-spacing: 2px;
+  font-size: 0.85rem;
+  color: var(--color-text-soft);
+}
+
+.gift-number {
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.gift-name {
+  font-size: 0.85rem;
+  color: var(--color-text-soft);
+  margin-bottom: 10px;
+}
+
+/* ===================== RSVP FORM ===================== */
+.rsvp-form {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  width: 100%;
+  text-align: left;
+}
+
+.rsvp-form label {
+  font-size: 0.78rem;
+  letter-spacing: 0.5px;
+  color: var(--color-text-soft);
+  margin-top: 12px;
+}
+
+.rsvp-form input,
+.rsvp-form select,
+.rsvp-form textarea {
+  padding: 12px 14px;
+  border: 1px solid var(--color-accent-light);
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: 0.92rem;
+  background: var(--color-white);
+  color: var(--color-text);
+}
+
+.rsvp-form textarea {
+  min-height: 90px;
+  resize: vertical;
+}
+
+.rsvp-form button {
+  margin-top: 18px;
+  align-self: center;
+}
+
+.form-error {
+  color: #b3413e;
+  font-size: 0.82rem;
+  margin-top: 8px;
+}
+
+/* ===================== WISHES LIST ===================== */
+.wishes-section {
+  width: 100%;
+  margin-top: 40px;
+  text-align: left;
+}
+
+.wishes-heading {
+  font-family: var(--font-serif);
+  font-size: 1.1rem;
+  text-align: center;
+}
+
+.wishes-summary {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  margin: 12px 0 20px;
+  font-size: 0.85rem;
+  color: var(--color-text-soft);
+}
+
+.wishes-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  max-height: 360px;
+  overflow-y: auto;
+}
+
+.wish-item {
+  background: var(--color-white);
+  border: 1px solid var(--color-accent-light);
+  border-radius: 10px;
+  padding: 14px 16px;
+}
+
+.wish-item-header {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.wish-item-tag {
+  font-size: 0.68rem;
+  font-weight: 500;
+  padding: 2px 8px;
+  border-radius: 12px;
+  background: var(--color-cream-dark);
+  color: var(--color-text-soft);
+}
+
+.wish-item-tag.hadir {
+  background: #e3eee0;
+  color: #4b7a3f;
+}
+
+.wish-item-tag.tidak_hadir {
+  background: #f5e2e0;
+  color: #a3473f;
+}
+
+.wish-item p {
+  font-size: 0.88rem;
+  color: var(--color-text-soft);
+  line-height: 1.5;
+}
+
+#load-more-btn {
+  display: block;
+  margin: 20px auto 0;
+}
+
+/* ===================== CLOSING ===================== */
+.closing-text {
+  font-family: var(--font-serif);
+  color: var(--color-text-soft);
+  max-width: 340px;
+  margin: 16px 0 30px;
+  line-height: 1.6;
+}
+
+.footer {
+  font-size: 0.75rem;
+  color: var(--color-text-soft);
+  letter-spacing: 1px;
+}
+
+/* ===================== MUSIC TOGGLE ===================== */
+.music-toggle {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: var(--color-accent);
+  color: var(--color-white);
+  font-size: 1.2rem;
+  z-index: 50;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+}
+
+/* ===================== RESPONSIVE ===================== */
+@media (min-width: 540px) {
+  .couple-photos img,
+  .gallery-grid img {
+    height: 180px;
+  }
+}
