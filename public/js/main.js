@@ -17,7 +17,7 @@
     audio.paused ? audio.play() : audio.pause();
   }
 
-  // 2. Gift Modal Logic (BARU)
+  // 2. Gift Modal Logic
   function openGiftModal() {
     document.getElementById("gift-modal").classList.remove("hidden");
   }
@@ -42,6 +42,16 @@
 
   // 4. Document Setup On Load
   document.addEventListener("DOMContentLoaded", function () {
+    // --- FITUR SAPA TAMU OTOMATIS (BARU) ---
+    const urlParams = new URLSearchParams(window.location.search);
+    const guestName = urlParams.get('to');
+    if (guestName) {
+        const guestElement = document.getElementById('guest-name');
+        if (guestElement) {
+            guestElement.innerText = guestName.replace(/-/g, ' ');
+        }
+    }
+
     // Tombol-tombol utama
     document.getElementById('open-invitation-btn').addEventListener('click', openInvitation);
     document.getElementById('music-toggle').addEventListener('click', toggleMusic);
