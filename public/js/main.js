@@ -17,7 +17,16 @@
     audio.paused ? audio.play() : audio.pause();
   }
 
-  // 2. Gift Card Copy Logic
+  // 2. Gift Modal Logic (BARU)
+  function openGiftModal() {
+    document.getElementById("gift-modal").classList.remove("hidden");
+  }
+
+  function closeGiftModal() {
+    document.getElementById("gift-modal").classList.add("hidden");
+  }
+
+  // 3. Gift Card Copy Logic
   function copyAccountNumber(event) {
     if (event.target.classList.contains('copy-btn')) {
       const targetId = event.target.getAttribute('data-target');
@@ -31,11 +40,17 @@
     }
   }
 
-  // 3. Document Setup On Load
+  // 4. Document Setup On Load
   document.addEventListener("DOMContentLoaded", function () {
-    // Restored the click triggers for your buttons
+    // Tombol-tombol utama
     document.getElementById('open-invitation-btn').addEventListener('click', openInvitation);
     document.getElementById('music-toggle').addEventListener('click', toggleMusic);
+    
+    // Trigger Modal
+    document.getElementById('open-gift-modal').addEventListener('click', openGiftModal);
+    document.querySelector('.close-modal').addEventListener('click', closeGiftModal);
+    
+    // Copy Rekening
     document.body.addEventListener('click', copyAccountNumber);
     
     // Scroll Reveal Animation Observer
@@ -49,10 +64,7 @@
           entry.target.classList.remove('active');
         }
       });
-    }, {
-      root: null,
-      threshold: 0.15 
-    });
+    }, { threshold: 0.15 });
 
     revealElements.forEach(element => revealObserver.observe(element));
   }); 
