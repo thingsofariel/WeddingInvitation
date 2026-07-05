@@ -222,9 +222,10 @@ button {
 
 /* ===================== COUPLE ===================== */
 #couple {
-  /* Forces the layout container to display your background portrait over the global base styles */
-  background: linear-gradient(rgba(250, 246, 240, 0.75), rgba(250, 246, 240, 0.75)), url('../images/Cover3.jpg') no-repeat center center !important;
+  background-image: linear-gradient(rgba(250, 246, 240, 0.3), rgba(250, 246, 240, 0.3)), url('../images/Cover3.jpg') !important;
   background-size: cover !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
 }
 
 .couple-grid {
@@ -306,7 +307,23 @@ button {
   border-radius: 8px;
 }
 
+.couple-text-card {
+  background: rgba(250, 246, 240, 0.85); /* Semi-transparent cream */
+  padding: 24px 20px;
+  border-radius: 16px;
+  width: 95%; /* Keeps it from touching the absolute edges of the screen */
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+  border: 1px solid rgba(255, 255, 255, 0.5); /* Subtle border */
+}
+
 /* ===================== EVENT ===================== */
+#event {
+  background-image: linear-gradient(rgba(250, 246, 240, 0.8), rgba(250, 246, 240, 0.8)), url('../images/Cover4.jpeg') !important;
+  background-size: cover !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+}
+
 .event-grid {
   display: flex;
   flex-direction: column;
@@ -369,6 +386,13 @@ button {
 }
 
 /* ===================== GALLERY ===================== */
+#gallery {
+  background-image: linear-gradient(rgba(250, 246, 240, 0.8), rgba(250, 246, 240, 0.8)), url('../images/Cover5.jpeg') !important;
+  background-size: cover !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+}
+
 .gallery-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
