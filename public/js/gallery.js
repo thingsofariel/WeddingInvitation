@@ -4,15 +4,15 @@
 (function () {
   // Replace these with your actual gallery image filenames in public/images/
   const GALLERY_IMAGES = [
-    "images/gallery-01.jpg",
-    "images/gallery-02.jpg",
-    "images/gallery-03.jpg",
-    "images/gallery-04.jpg",
-    "images/gallery-05.jpg",
-    "images/gallery-06.jpg",
-    "images/gallery-07.jpg",
-    "images/gallery-08.jpg",
-    "images/gallery-09.jpg",
+    "images/Cover.jpg",
+    "images/Cover2.jpg",
+    "images/Cover3.jpg",
+    "images/Cover4.jpeg",
+    "images/Cover5.jpeg",
+    "images/Cover6.jpeg",
+    "images/Cover7.jpeg",
+    "images/Cover8.jpeg",
+    "images/Cover9.jpeg",
   ];
 
   let currentIndex = 0;

@@ -200,11 +200,12 @@ button {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: var(--color-white);
-  border: 1px solid var(--color-accent-light);
+  background: rgba(250, 246, 240, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.5);
   border-radius: 12px;
   padding: 14px 10px;
   min-width: 60px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
 }
 
 .countdown-number {
@@ -342,11 +343,15 @@ button {
 }
 
 .event-card {
-  background: var(--color-white);
-  border-radius: 14px;
+  /* Changed from solid white to the semi-transparent cream from the couple page */
+  background: rgba(250, 246, 240, 0.85);
+  border-radius: 16px;
   padding: 26px 20px;
-  border: 1px solid var(--color-accent-light);
-  width: 100%;         /* Forces the card to span the full width */
+  /* Soft white border instead of the dark accent line */
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  width: 100%;         
+  /* Added the elegant soft shadow */
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
 }
 .event-card-title {
   font-family: var(--font-serif);
@@ -402,9 +407,9 @@ button {
 
 .gallery-grid img {
   width: 100%;
-  height: 100px;
-  object-fit: cover;
-  border-radius: 4px;
+  height: 120px;       /* Set a fixed height */
+  object-fit: cover;   /* This ensures the photo fills the box without distorting */
+  border-radius: 8px;  /* Slightly softer corners */
   cursor: pointer;
   transition: opacity 0.2s ease;
 }
@@ -493,41 +498,97 @@ button {
 }
 
 /* ===================== RSVP FORM ===================== */
-.rsvp-form {
+#rsvp {
+  /* Fix 1: Reduced the cream tint from 0.85 to 0.35 so the beach photo sharply shows through */
+  background: linear-gradient(rgba(250, 246, 240, 0.35), rgba(250, 246, 240, 0.35)), 
+              url('../images/Cover7.jpeg') no-repeat center center;
+  background-size: cover;
+  padding: 60px 20px;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
-  gap: 6px;
-  width: 100%;
-  text-align: left;
+  align-items: center;
+  justify-content: center;
 }
 
+/* ===================== RSVP FORM ===================== */
+#rsvp {
+  background: linear-gradient(rgba(250, 246, 240, 0.35), rgba(250, 246, 240, 0.35)), 
+              url('../images/Cover7.jpeg') no-repeat center center;
+  background-size: cover;
+  padding: 40px 20px 60px 20px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+  /* Pushes the form up into the sky area, leaving the bottom clear for faces */
+  justify-content: flex-start; 
+}
+
+.rsvp-form {
+  background: rgba(255, 255, 255, 0.25); 
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  
+  /* Shaved down padding from 30px to make the card shorter */
+  padding: 22px 24px; 
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  width: 100%;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  margin-top: 15px;
+  
+  backdrop-filter: blur(12px); 
+  -webkit-backdrop-filter: blur(12px);
+}
+
+/* Typography and Inputs */
 .rsvp-form label {
-  font-size: 0.78rem;
-  letter-spacing: 0.5px;
-  color: var(--color-text-soft);
-  margin-top: 12px;
+  font-family: var(--font-serif);
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--color-text);
+  
+  /* Reduced top margin slightly to save extra vertical height */
+  margin-top: 10px; 
 }
 
 .rsvp-form input,
 .rsvp-form select,
 .rsvp-form textarea {
-  padding: 12px 14px;
-  border: 1px solid var(--color-accent-light);
+  width: 100%;
+  padding: 10px 12px; /* Made inputs slightly more compact */
+  border: 1px solid rgba(255, 255, 255, 0.4);
   border-radius: 8px;
-  font-family: inherit;
-  font-size: 0.92rem;
-  background: var(--color-white);
+  font-family: var(--font-serif); 
+  font-size: 0.95rem;
+  background: rgba(255, 255, 255, 0.6);
   color: var(--color-text);
 }
 
 .rsvp-form textarea {
-  min-height: 90px;
+  min-height: 80px; /* Tucked the textarea height down slightly */
   resize: vertical;
 }
 
+/* Match the button to your theme */
 .rsvp-form button {
-  margin-top: 18px;
-  align-self: center;
+  margin-top: 18px; /* Tighter button spacing */
+  background: var(--color-accent);
+  color: var(--color-white);
+  padding: 12px;
+  border-radius: 30px;
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+  transition: 0.3s;
+}
+
+.rsvp-form button:hover {
+  background: #8c6a44;
 }
 
 .form-error {
@@ -568,10 +629,12 @@ button {
 }
 
 .wish-item {
-  background: var(--color-white);
-  border: 1px solid var(--color-accent-light);
-  border-radius: 10px;
+  /* Matches the beautiful cream tone perfectly */
+  background: rgba(250, 246, 240, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 14px;
   padding: 14px 16px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
 }
 
 .wish-item-header {
@@ -613,6 +676,27 @@ button {
 }
 
 /* ===================== CLOSING ===================== */
+/* ===================== CLOSING ===================== */
+#closing {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 60px 20px;
+  width: 100%;
+}
+
+.closing-img {
+  width: 100%;
+  max-width: 280px;      /* Restricts the width to look elegant on mobile screens */
+  height: auto;
+  border-radius: 20px;   /* Beautiful rounded frame matching your gift page layout */
+  margin-bottom: 24px;   /* Generous spacing before the names */
+  object-fit: cover;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05); /* Soft, elegant shadow */
+}
+
 .closing-text {
   font-family: var(--font-serif);
   color: var(--color-text-soft);
@@ -649,3 +733,68 @@ button {
     height: 180px;
   }
 }
+
+/* Gift Photo Header */
+.gift-header-img {
+  width: 100%;
+  max-width: 280px; /* Adjust this to make it smaller if needed */
+  margin: 0 auto 20px auto; /* Centers it nicely */
+  border-radius: 12px;
+  overflow: hidden;
+}
+/* Modal Overlay */
+.modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+.modal-content {
+  background: var(--color-white);
+  padding: 30px;
+  border-radius: 16px;
+  width: 90%;
+  max-width: 400px;
+  position: relative;
+}
+.close-modal {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+/* ================= ANIMATIONS ================= */
+
+/* Base class for anything you want to reveal on scroll */
+.reveal {
+  opacity: 0;
+  transition: all 1s cubic-bezier(0.215, 0.610, 0.355, 1);
+  will-change: opacity, transform;
+}
+
+/* Variant 1: Fade and slide up smoothly */
+.fade-up {
+  transform: translateY(40px);
+}
+
+/* Variant 2: Soft zoom-in (perfect for photo containers) */
+.zoom-in {
+  transform: scale(0.92);
+}
+
+/* The active class that JavaScript will automatically apply */
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+/* Staggered entry delays for grids/items (like countdown boxes or gallery photos) */
+.delay-100 { transition-delay: 100ms; }
+.delay-200 { transition-delay: 200ms; }
+.delay-300 { transition-delay: 300ms; }
+.delay-400 { transition-delay: 400ms; }
